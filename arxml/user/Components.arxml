@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ECU_Abstractions</SHORT-NAME>
+      <ELEMENTS>
+        <ECU-ABSTRACTION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>ECU_ABS</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>Pport_ECU_to_SwitchSensor</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_ECU_to_Sensor</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>Pport_ECU_to_RainSensor</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_ECU_to_Sensor</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>Pport_ECU_to_WiperMotor</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_ECU_to_Actuator</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="9bddf24f-525b-4bee-b973-93c015ddb2e5">
+              <SHORT-NAME>IB_ECU_ABS</SHORT-NAME>
+              <EVENTS>
+                <OPERATION-INVOKED-EVENT UUID="b86fc082-56ca-4897-b5fc-20856d5b20a3">
+                  <SHORT-NAME>OIE_ECU_to_WiperSensor</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ECU_Abstractions/ECU_ABS/IB_ECU_ABS/RE_ECU_to_RainSensor</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ECU_Abstractions/ECU_ABS/Pport_ECU_to_RainSensor</CONTEXT-P-PORT-REF>
+                    <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_ECU_to_Sensor/CS_Oper_ECU_to_RainSensor</TARGET-PROVIDED-OPERATION-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+                <OPERATION-INVOKED-EVENT UUID="bc9ea879-a20f-40b0-b4f0-b5ada5f455c0">
+                  <SHORT-NAME>OIE_ECU_to_SwitchSensor</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ECU_Abstractions/ECU_ABS/IB_ECU_ABS/RE_ECU_to_SwitchSensor</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ECU_Abstractions/ECU_ABS/Pport_ECU_to_SwitchSensor</CONTEXT-P-PORT-REF>
+                    <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_ECU_to_Sensor/CS_Oper_ECU_to_SwitchSensor</TARGET-PROVIDED-OPERATION-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+                <OPERATION-INVOKED-EVENT UUID="5365f07b-eccc-4391-8672-763c6901e1e3">
+                  <SHORT-NAME>OIE_ECU_to_Wipermotor</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ECU_Abstractions/ECU_ABS/IB_ECU_ABS/RE_ECU_to_WiperMotor</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ECU_Abstractions/ECU_ABS/Pport_ECU_to_WiperMotor</CONTEXT-P-PORT-REF>
+                    <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_ECU_to_Actuator/CS_Oper_ECU_to_WiperMotor</TARGET-PROVIDED-OPERATION-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="6b6b0412-c099-4f35-a046-71ce8d8f1683">
+                  <SHORT-NAME>RE_ECU_to_RainSensor</SHORT-NAME>
+                  <SYMBOL>RE_ECU_to_RainSensor</SYMBOL>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="651924e1-516e-4845-b80e-74c6d21da12f">
+                  <SHORT-NAME>RE_ECU_to_WiperMotor</SHORT-NAME>
+                  <SYMBOL>RE_ECU_to_WiperMotor</SYMBOL>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="54bb3e22-b320-4197-a229-1a9448587869">
+                  <SHORT-NAME>RE_ECU_to_SwitchSensor</SHORT-NAME>
+                  <SYMBOL>RE_ECU_to_SwitchSensor</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </ECU-ABSTRACTION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Applications</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>Wiper_Controller</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>Rport_RainSensor_to_WiperController</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_Sensor_to_App</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>Pport_WiperController_to_WiperMotor</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/SenderReceiverInterfaces/SR_App_to_Actuator</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>Rport_SitchSensor_to_WiperController</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/SenderReceiverInterfaces/SR_SwitchSensor_to_WiperController</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="c463d346-2abc-42e5-8abe-b5e9a336715b">
+              <SHORT-NAME>IB_Wiper_Controller</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="41a7ae7b-30ef-4c81-8cb4-3a1fe25387b5">
+                  <SHORT-NAME>TE_100ms</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Applications/Wiper_Controller/IB_Wiper_Controller/RE_WiperController</START-ON-EVENT-REF>
+                  <PERIOD>0.1</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="1609dc74-ba2f-46a5-9df0-43964a25633e">
+                  <SHORT-NAME>RE_WiperController</SHORT-NAME>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="eaea14d3-b0d9-4124-afcf-cb1f32cc57f5">
+                      <SHORT-NAME>DRPA_switch_sensor_value_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Applications/Wiper_Controller/Rport_SitchSensor_to_WiperController</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_SwitchSensor_to_WiperController/switch_sensor_value</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="f63e1c10-24c6-4947-8a15-543b1918caad">
+                      <SHORT-NAME>DSP_wipermotor_Speed_Value_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Applications/Wiper_Controller/Pport_WiperController_to_WiperMotor</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="5a5df777-a416-4e17-b78c-b806f4808b5b">
+                      <SHORT-NAME>SynchronousServerCallPoint_0</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Applications/Wiper_Controller/Rport_RainSensor_to_WiperController</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_Sensor_to_App/CS_Oper_RainSensor_to_WiperController</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>RE_WiperController</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>Sensors_and_Actuators</SHORT-NAME>
+      <ELEMENTS>
+        <SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+          <SHORT-NAME>Switch_Sensor</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>Rport_ECU_to_SwitchSensor</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_ECU_to_Sensor</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>Pport_SwitchSensor_to_WiperMode</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/SenderReceiverInterfaces/SR_SwitchSensor_to_WiperController</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="1d1d2ad0-4981-4538-a9c8-232072403e0f">
+              <SHORT-NAME>IB_Switch_Sensor</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="7915e96c-f9c9-4dff-aad6-63f86948c45e">
+                  <SHORT-NAME>TE_100ms</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Sensors_and_Actuators/Switch_Sensor/IB_Switch_Sensor/RE_SwitchSensor</START-ON-EVENT-REF>
+                  <PERIOD>0.1</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="2cf883a4-04bc-46b6-943f-f1407f6d7785">
+                  <SHORT-NAME>RE_SwitchSensor</SHORT-NAME>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="3e9b0faa-0c51-4404-ae6a-6a4e461d645e">
+                      <SHORT-NAME>DSP_switch_sensor_value_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Sensors_and_Actuators/Switch_Sensor/Pport_SwitchSensor_to_WiperMode</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_SwitchSensor_to_WiperController/switch_sensor_value</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="ab046df9-94a4-41b5-b076-d695d9feb006">
+                      <SHORT-NAME>SynchronousServerCallPoint_0</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Switch_Sensor/Rport_ECU_to_SwitchSensor</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_ECU_to_Sensor/CS_Oper_ECU_to_SwitchSensor</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>RE_SwitchSensor</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+        <SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+          <SHORT-NAME>Rain_Sensor</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>Rport_ECU_to_RainSensor</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_ECU_to_Sensor</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <P-PORT-PROTOTYPE>
+              <SHORT-NAME>Pport_RainSensor_to_WiperController</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_Sensor_to_App</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="2655b15c-d592-419f-9b6c-5724ef19f7fd">
+              <SHORT-NAME>IB_Rain_Sensor</SHORT-NAME>
+              <EVENTS>
+                <OPERATION-INVOKED-EVENT UUID="fca8589d-072e-45ac-8389-c5e6867d60db">
+                  <SHORT-NAME>OIE_RainSensor_to_WiperController</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Sensors_and_Actuators/Rain_Sensor/IB_Rain_Sensor/RE_RainSensor</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/Sensors_and_Actuators/Rain_Sensor/Pport_RainSensor_to_WiperController</CONTEXT-P-PORT-REF>
+                    <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_Sensor_to_App/CS_Oper_RainSensor_to_WiperController</TARGET-PROVIDED-OPERATION-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="c546ed53-aee0-4e24-b315-05c8634203bc">
+                  <SHORT-NAME>RE_RainSensor</SHORT-NAME>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="a3e2eff4-bd77-4a2e-a4cb-c90e4fd9a00a">
+                      <SHORT-NAME>SynchronousServerCallPoint</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Rain_Sensor/Rport_ECU_to_RainSensor</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_ECU_to_Sensor/CS_Oper_ECU_to_RainSensor</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>RE_RainSensor</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+        <SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+          <SHORT-NAME>Wiper_Motor</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>Rport_ECU_to_WiperMotor</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/ClientServerInterfaces/CS_ECU_to_Actuator</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE>
+              <SHORT-NAME>Rport_WiperController_to_WiperMotor</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/SenderReceiverInterfaces/SR_App_to_Actuator</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="3bea39c0-d724-48fb-b1e3-88dc464b1e2e">
+              <SHORT-NAME>IB_Wiper_Motor</SHORT-NAME>
+              <EVENTS>
+                <DATA-RECEIVED-EVENT UUID="0254748d-94c0-46cf-b3a6-057112a98f6e">
+                  <SHORT-NAME>DataReceivedEvent_0</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Sensors_and_Actuators/Wiper_Motor/IB_Wiper_Motor/RE_WiperMotor</START-ON-EVENT-REF>
+                  <DATA-IREF>
+                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_WiperController_to_WiperMotor</CONTEXT-R-PORT-REF>
+                    <TARGET-DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-DATA-ELEMENT-REF>
+                  </DATA-IREF>
+                </DATA-RECEIVED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="33133088-d567-453a-984f-f4cb51211031">
+                  <SHORT-NAME>RE_WiperMotor</SHORT-NAME>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="8c74d0a9-e1dc-40b9-a6d2-869648d64fa3">
+                      <SHORT-NAME>DRPA_wipermotor_Speed_Value_0</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_WiperController_to_WiperMotor</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="43d4ec91-0e39-4d74-9731-c3b81ea1a3a5">
+                      <SHORT-NAME>SynchronousServerCallPoint_0</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_ECU_to_WiperMotor</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/ClientServerInterfaces/CS_ECU_to_Actuator/CS_Oper_ECU_to_WiperMotor</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>RE_WiperMotor</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>true</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </SENSOR-ACTUATOR-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

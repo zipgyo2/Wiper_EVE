@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ClientServerInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <CLIENT-SERVER-INTERFACE>
+          <SHORT-NAME>CS_ECU_to_Sensor</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <OPERATIONS>
+            <CLIENT-SERVER-OPERATION>
+              <SHORT-NAME>CS_Oper_ECU_to_SwitchSensor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE>
+                  <SHORT-NAME>switch_sensor_value</SHORT-NAME>
+                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint8</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION>
+              <SHORT-NAME>CS_Oper_ECU_to_RainSensor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE>
+                  <SHORT-NAME>rain_sensor_value</SHORT-NAME>
+                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint16</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </OPERATIONS>
+        </CLIENT-SERVER-INTERFACE>
+        <CLIENT-SERVER-INTERFACE>
+          <SHORT-NAME>CS_ECU_to_Actuator</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <OPERATIONS>
+            <CLIENT-SERVER-OPERATION>
+              <SHORT-NAME>CS_Oper_ECU_to_WiperMotor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE>
+                  <SHORT-NAME>wipermotor_speed_value</SHORT-NAME>
+                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint8</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </OPERATIONS>
+        </CLIENT-SERVER-INTERFACE>
+        <CLIENT-SERVER-INTERFACE>
+          <SHORT-NAME>CS_Sensor_to_App</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <OPERATIONS>
+            <CLIENT-SERVER-OPERATION>
+              <SHORT-NAME>CS_Oper_RainSensor_to_WiperController</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE>
+                  <SHORT-NAME>rain_sensor_value</SHORT-NAME>
+                  <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint16</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </OPERATIONS>
+        </CLIENT-SERVER-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>SenderReceiverInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <SENDER-RECEIVER-INTERFACE>
+          <SHORT-NAME>SR_App_to_Actuator</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>wipermotor_Speed_Value</SHORT-NAME>
+              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint8</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+        <SENDER-RECEIVER-INTERFACE>
+          <SHORT-NAME>SR_SwitchSensor_to_WiperController</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE>
+              <SHORT-NAME>switch_sensor_value</SHORT-NAME>
+              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_PlatformTypes/ImplementationDataTypes/uint8</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+        </SENDER-RECEIVER-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ModeSwitchInterfaces</SHORT-NAME>
+      <ADMIN-DATA><SDGS><SDG GID="_conversion"><SDG GID="MODE-DECLARATION-MAPPING-SET"><SDG GID="SHORT-NAME"><SD GID="_mixed">ModeDeclarationMappingSet</SD></SDG><SDG GID="MODE-DECLARATION-MAPPINGS"><SDG GID="MODE-DECLARATION-MAPPING"><SDG GID="SHORT-NAME"><SD GID="_mixed">ModeDeclarationMapping_0</SD></SDG><SDG GID="FIRST-MODE-REFS"><SDG GID="FIRST-MODE-REF"><SD GID="_mixed">/ModeSwitchInterfaces/ModeDeclarationGroup/ModeDeclarationGroup/Auto</SD><SD GID="DEST">MODE-DECLARATION</SD></SDG><SD GID="_mixed">
+                
+              </SD></SDG><SDG GID="SECOND-MODE-REF"><SD GID="_mixed">/ModeSwitchInterfaces/ModeDeclarationGroup/ModeDeclarationGroup/Auto</SD><SD GID="DEST">MODE-DECLARATION</SD></SDG><SD GID="_mixed">
+              
+              
+              
+            </SD></SDG><SDG GID="MODE-DECLARATION-MAPPING"><SDG GID="SHORT-NAME"><SD GID="_mixed">ModeDeclarationMapping_1</SD></SDG><SDG GID="FIRST-MODE-REFS"><SDG GID="FIRST-MODE-REF"><SD GID="_mixed">/ModeSwitchInterfaces/ModeDeclarationGroup/ModeDeclarationGroup/Wiper_Lv1</SD><SD GID="DEST">MODE-DECLARATION</SD></SDG><SD GID="_mixed">
+                
+              </SD></SDG><SDG GID="SECOND-MODE-REF"><SD GID="_mixed">/ModeSwitchInterfaces/ModeDeclarationGroup/ModeDeclarationGroup/Wiper_Lv1</SD><SD GID="DEST">MODE-DECLARATION</SD></SDG><SD GID="_mixed">
+              
+              
+              
+            </SD></SDG><SD GID="_mixed">
+            
+            
+          </SD></SDG><SD GID="_mixed">
+          
+          
+        </SD></SDG><SD GID="_path">MODE-DECLARATION-MAPPING-SET@0/ELEMENTS@2</SD><SD GID="_target">org.artop.aal.autosar411</SD></SDG></SDGS></ADMIN-DATA><ELEMENTS>
+        
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ModeDeclarationGroup</SHORT-NAME>
+          <ELEMENTS>
+            <MODE-DECLARATION-GROUP>
+              <SHORT-NAME>ModeDeclarationGroup</SHORT-NAME>
+              <CATEGORY>EXPLICIT_ORDER</CATEGORY>
+              <INITIAL-MODE-REF DEST="MODE-DECLARATION">/ModeSwitchInterfaces/ModeDeclarationGroup/ModeDeclarationGroup/Auto</INITIAL-MODE-REF>
+              <MODE-DECLARATIONS>
+                <MODE-DECLARATION>
+                  <SHORT-NAME>Auto</SHORT-NAME>
+                  <VALUE>0</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION>
+                  <SHORT-NAME>Wiper_Lv1</SHORT-NAME>
+                  <VALUE>1</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION>
+                  <SHORT-NAME>Wiper_Lv2</SHORT-NAME>
+                  <VALUE>2</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION>
+                  <SHORT-NAME>Wiper_Lv3</SHORT-NAME>
+                  <VALUE>3</VALUE>
+                </MODE-DECLARATION>
+              </MODE-DECLARATIONS>
+            </MODE-DECLARATION-GROUP>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

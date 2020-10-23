@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><BakeConfiguration>
+<stringAttribute key="VECU_NAME" value="WiperProject"/>
+<stringAttribute key="ecu_instance" value="/ARPackage_0/EcuInstance_0"/>
+<stringAttribute key="ecu_arxml_path" value=".\arxml/user/ARPackage_0.arxml"/>
+<stringAttribute key="target" value="WINDOWS"/>
+<stringAttribute key="host" value="127.0.0.1"/>
+<stringAttribute key="xcp_port" value="18041"/>
+<stringAttribute key="rtaos_depends_on_rte" value="true"/>
+<stringAttribute key="freeze_rte" value="false"/>
+<stringAttribute key="freeze_rtaos" value="false"/>
+<stringAttribute key="freeze_mcal" value="false"/>
+<stringAttribute key="freeze_build" value="false"/>
+<stringAttribute key="incremental_build" value="true"/>
+<stringAttribute key="build_config" value="SVNPTEFSX0VWRXx8SVNPTEFSX0VWRV9SVU5USU1F"/>
+<Build>
+<listAttribute key="include_root" value="./src">
+<listEntry value="*.h"/>
+<listEntry value="*.c"/>
+<listEntry value="*.o"/>
+<listEntry value="*.cpp"/>
+<listEntry value="*.hpp"/>
+</listAttribute>
+</Build>
+<MCAL/>
+<RTA-OS>
+<listAttribute key="include_root">
+<listEntry value=".\arxml/EVE/RTA-OS/osVECU.arxml"/>
+<listEntry value=".\src/gen/MinGW/RTE/osNeeds.arxml"/>
+</listAttribute>
+</RTA-OS>
+<RTE>
+<option value="-tsl=127 --samples=swc"/>
+<listAttribute key="include_root">
+<listEntry value=".\arxml/user/ARPackage_1.arxml"/>
+<listEntry value=".\arxml/user/EcuInstance_0_FlatMap.arxml"/>
+<listEntry value=".\arxml/user/System_0_EcuExtr.arxml"/>
+<listEntry value=".\arxml/user/OS_CFG.arxml"/>
+<listEntry value=".\arxml/user/Compositions.arxml"/>
+<listEntry value=".\arxml/user/EcuInstance_0_FlatView_SWCD.arxml"/>
+<listEntry value=".\arxml/user/Interfaces.arxml"/>
+<listEntry value=".\arxml/user/ISOLAR_PlatformTypes.arxml"/>
+<listEntry value=".\arxml/user/ARPackage_0.arxml"/>
+<listEntry value=".\arxml/user/RTE_CFG.arxml"/>
+<listEntry value=".\arxml/user/Components.arxml"/>
+</listAttribute>
+</RTE>
+</BakeConfiguration>

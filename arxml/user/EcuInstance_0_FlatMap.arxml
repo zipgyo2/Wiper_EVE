@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_4-0-3.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>EcuInstance_0_FlatView</SHORT-NAME>
+      <ELEMENTS>
+        <FLAT-MAP>
+          <SHORT-NAME>EcuInstance_0_FlatMap</SHORT-NAME>
+          <INSTANCES>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>CPT_ECU_ABS</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_ECU_ABS</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_ECU_ABS</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>CPT_Rain_Sensor</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Rain_Sensor</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Rain_Sensor</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>CPT_Switch_Sensor</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Switch_Sensor</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Switch_Sensor</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>switch_sensor_value</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Switch_Sensor</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="P-PORT-PROTOTYPE">/Sensors_and_Actuators/Switch_Sensor/Pport_SwitchSensor_to_WiperMode</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_SwitchSensor_to_WiperController/switch_sensor_value</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Switch_Sensor</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="P-PORT-PROTOTYPE">/Sensors_and_Actuators/Switch_Sensor/Pport_SwitchSensor_to_WiperMode</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_SwitchSensor_to_WiperController/switch_sensor_value</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>CPT_Wiper_Controller</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Wiper_Controller</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Wiper_Controller</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>CPT_Wiper_Motor</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Wiper_Motor</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Wiper_Motor</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>wipermotor_Speed_Value_RPort</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Wiper_Motor</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_WiperController_to_WiperMotor</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Wiper_Motor</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_WiperController_to_WiperMotor</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>CPT_Wiper_Motor_0</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Wiper_Motor_0</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Wiper_Motor_0</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <SHORT-NAME>wipermotor_Speed_Value_0_RPort</SHORT-NAME>
+              <UPSTREAM-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARPackage_0/System_0/RootSwCompositionPrototype_0</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="SW-COMPONENT-PROTOTYPE">/Compositions/temp/CPT_Wiper_Motor_0</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_WiperController_to_WiperMotor</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-REF>
+              </UPSTREAM-REFERENCE-IREF>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/System_0_EcuExtract/EXTR_EcuInstance_0/CPT_EcuInstance_0_FlatView</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="SW-COMPONENT-PROTOTYPE">/EcuInstance_0_FlatView/SwComponentTypes/EcuInstance_0_FlatView/CPT_Wiper_Motor_0</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="R-PORT-PROTOTYPE">/Sensors_and_Actuators/Wiper_Motor/Rport_WiperController_to_WiperMotor</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="VARIABLE-DATA-PROTOTYPE">/SenderReceiverInterfaces/SR_App_to_Actuator/wipermotor_Speed_Value</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+          </INSTANCES>
+        </FLAT-MAP>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

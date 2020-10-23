@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.etas.vaptools.rtarte.generator.core.LaunchConfigurationType">
+<stringAttribute key="VECU_NAME" value="WiperProject"/>
+<stringAttribute key="additional_command" value="-tsl=127 --samples=swc"/>
+<listAttribute key="arxml_files">
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/ARPackage_1.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/EcuInstance_0_FlatMap.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/System_0_EcuExtr.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/OS_CFG.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/Compositions.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/EcuInstance_0_FlatView_SWCD.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/Interfaces.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/ISOLAR_PlatformTypes.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/ARPackage_0.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/RTE_CFG.arxml}"/>
+<listEntry value="${workspace_loc:/WiperProject/arxml/user/Components.arxml}"/>
+</listAttribute>
+<stringAttribute key="ecu_arxml_path" value="platform:/resource/WiperProject/arxml/user/ARPackage_0.arxml"/>
+<stringAttribute key="ecu_instances" value="/ARPackage_0/EcuInstance_0"/>
+<stringAttribute key="output_loc" value="${workspace_loc:/WiperProject/src/gen/MinGW/RTE}"/>
+<stringAttribute key="tool_loc" value="C:\Program Files\ETAS\ISOLAR-EVE3.0\plugins\com.etas.evetools.toolsfolder_1.4.5\Tools\bin\RTEGen.exe"/>
+</launchConfiguration>
